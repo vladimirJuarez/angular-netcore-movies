@@ -1,0 +1,64 @@
+<app-listado-generico [listado]="peliculas">
+<!-- 
+  <ng-container vacio>
+    <div>Mensaje personalizado para contenido <b>vacío</b></div>
+  </ng-container> -->
+  <ng-container contenido>
+    <div class="peliculas-contenedor">
+      <div
+        *ngFor="let pelicula of peliculas; let index = index"
+        class="pelicula-contenedor">
+
+        <a>
+          <img [src]="pelicula.poster" alt="poster" />
+        </a>
+        <p>
+          <a>{{pelicula.titulo}}</a>
+        </p>        
+        <div>
+          <a mat-flat-button color="primary">
+            Editar
+          </a>
+          <button
+          mat-flat-button
+          color="warn"
+          type="button">
+          Borrar
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <!--<div *ngFor="let pelicula of peliculas; let index = index" class="pelicula-contenedor">
+      <div>
+        Película {{index}}: {{pelicula.titulo | uppercase}}
+        <button style="margin-left: 1rem;" (click)="remover(index)">Remover</button>
+      </div>
+      <div>
+        {{pelicula.fechaLazamiento | date:"dd-MMMM-yyyy" | uppercase}}
+      </div>
+      <div>
+        {{pelicula.precio | currency}}
+      </div>
+    </div>-->
+  </ng-container>
+</app-listado-generico>
+
+<!-- 
+<div *ngIf="peliculas?.length === 0">
+  <img src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"/>
+</div>
+<ng-container *ngIf="peliculas && peliculas.length > 0">  
+  <div *ngFor="let pelicula of peliculas; let index = index" class="pelicula-contenedor">
+    <div>
+      Película {{index}}: {{pelicula.titulo | uppercase}}
+      <button style="margin-left: 1rem;" (click)="remover(index)">Remover</button>
+    </div>
+    <div>
+      {{pelicula.fechaLazamiento | date:"dd-MMMM-yyyy" | uppercase}}
+    </div>
+    <div>
+      {{pelicula.precio | currency}}
+    </div>
+  </div>
+</ng-container>-->

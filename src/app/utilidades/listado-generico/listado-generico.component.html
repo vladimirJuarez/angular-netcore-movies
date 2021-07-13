@@ -1,0 +1,12 @@
+<div *ngIf="listado?.length === 0">
+    <span #vacio>
+      <ng-content select="[vacio]"></ng-content></span>
+    <span *ngIf="!vacio.innerHTML.trim()">
+      <p>no hay películas para mostrar</p>
+    </span>
+  <!-- <img src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"/> -->
+</div>
+
+<ng-container *ngIf="listado && listado.length > 0">
+  <ng-content select="[contenido]"></ng-content>
+</ng-container>
