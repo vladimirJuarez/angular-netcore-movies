@@ -1,8 +1,9 @@
-export interface actorEdicionDTO {
+export interface actorDTO {
+  id: number;
   name: string;
   dateBirth: Date;
   picture: string;
-  //biografia: string;
+  biography: string;
 }
 
 export interface actorCreacionDTO {
